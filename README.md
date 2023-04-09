@@ -7,6 +7,7 @@ Tabel yang dibuat dalam penugasan kali ininadalah sebagai berikut:
 2. Tabel transaction
 3. Tabel ticket
 4. Tabel seat
+
 lalu muncul tabel tambahan yaitu:
 5. Tabel transaction_ticket
 
