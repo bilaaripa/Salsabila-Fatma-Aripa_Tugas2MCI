@@ -32,7 +32,7 @@ const getSeatByCode = async (req, res) => {
     const seat_code = req.params.seat_code;
     seatService.getSeatByCode(seat_code)
     .then(seat => {
-        if(!seat) {
+        if(seat!==5) {
             res.status(404).send({
                 status : 'error',
                 message : 'Data seat tidak ditemukan',

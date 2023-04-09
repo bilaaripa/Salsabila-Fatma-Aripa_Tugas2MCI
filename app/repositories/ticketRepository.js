@@ -8,16 +8,6 @@ const getAllTicket = () => {
     )
 }
 
-const getTicketByPrice = (ticket_price) => {
-    return ticket.findOne(
-        {
-            where: {
-                ticket_price: ticket_price
-            }
-        }
-    )
-}
-
 const createTicket = (data) => {
     return ticket.create(data)
 }
@@ -40,7 +30,7 @@ const deleteTicket = (ticket_price) => {
 
 module.exports = {
     getAllTicket,
-    getTicketByPrice,
+
     createTicket,
     updateTicket,
     deleteTicket

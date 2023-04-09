@@ -29,10 +29,10 @@ const getAllTransaction = async (req, res) => {
 }
 
 const getTransactionByPaymentStatus = async (req, res) => {
-    const payment_status = req.params.payment_status;
-    transactionService.getTransactionByPaymentStatus(payment_status)
+    const total_payment = req.params.total_payment;
+    transactionService.getTransactionByPaymentStatus(total_payment)
     .then(transaction => {
-        if(!transaction) {
+        if(transaction === 0) {
             res.status(404).send({
                 status : 'error',
                 message : 'Data Transaksi tidak ditemukan',
@@ -83,15 +83,15 @@ const createTransaction = async (req, res) => {
 }
 
 const updateTransaction = (req, res) => {
-    const payment_status = req.params.payment_status;
-    if(!payment_status) {
+    const total_payment= req.params.total_payment;
+    if(total_payment===0) {
         return res.status(400).send({
             status : 'error',
             message : 'Payment Status tidak valid',
             data : {}
         });
     }
-    transactionService.updateTransaction(req.body, payment_status)
+    transactionService.updateTransaction(req.body, total_payment)
     .then(transaction => {
         res.status(200).send({
             status : 'success',
@@ -109,20 +109,20 @@ const updateTransaction = (req, res) => {
 }
 
 const deleteTransaction = (req, res) => {
-    const payment_status = req.params.payment_status;
-    if(!payment_status) {
+    const total_payment = req.params.total_payment;
+    if(total_payment===0) {
         return res.status(400).send({
             status : 'error',
             message : 'Payment Status tidak valid',
             data : {}
         });
     }
-    transactionService.deleteTransaction(payment_status)
+    transactionService.deleteTransaction(total_payment)
     .then(transaction => {
         res.status(200).send({
             status : 'success',
             message : 'Data Transaksi berhasil dihapus',
-            data : user
+            data : transaction
         });
     })
     .catch(err => {

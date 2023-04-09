@@ -5,8 +5,7 @@
   "main": "config/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node config/server.js",
-    "dev": "nodemon config/server.js"
+    "start": "nodemon config/server.js"
   },
   "keywords": [],
   "author": "",

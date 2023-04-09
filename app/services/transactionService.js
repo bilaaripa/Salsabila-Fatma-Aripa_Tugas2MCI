@@ -10,9 +10,9 @@ const getAllTransaction = async () => {
     }
 }
 
-const getTransactionByPaymentStatus = async (payment_status) => {
+const getTransactionByPaymentStatus = async (total_payment) => {
     try {
-        const transaction = await transactionRepository.getTransactionByPaymentStatus(payment_status);
+        const transaction = await transactionRepository.getTransactionByPaymentStatus(total_payment);
         return transaction;
     }
     catch(err) {
@@ -30,9 +30,9 @@ const createTransaction = async (data) => {
     }
 }
 
-const updateTransaction = async (data, payment_status) => {
+const updateTransaction = async (data, total_payment) => {
     try{
-        const transaction = await transactionRepository.updateTransaction(data, payment_status);
+        const transaction = await transactionRepository.updateTransaction(data, total_payment);
         return transaction;
     }
     catch(err) {
@@ -40,9 +40,9 @@ const updateTransaction = async (data, payment_status) => {
     }
 }
 
-const deleteTransaction = async (payment_status) => {
+const deleteTransaction = async (total_payment) => {
     try{
-        const transaction = await transactionRepository.deleteTransaction(payment_status);
+        const transaction = await transactionRepository.deleteTransaction(total_payment);
         return transaction;
     }
     catch(err){

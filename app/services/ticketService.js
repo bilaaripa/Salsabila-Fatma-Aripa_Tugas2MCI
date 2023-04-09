@@ -10,16 +10,6 @@ const getAllTicket = async () => {
     }
 }
 
-const getTicketByPrice = async (ticket_price) => {
-    try {
-        const ticket = await ticketRepository.getTicketByPrice(ticket_price);
-        return ticket;
-    }
-    catch(err) {
-        return err;
-    }
-}
-
 const createTicket = async (data) => {
     try{
         const ticket = await ticketRepository.createTicket(data);
@@ -52,7 +42,6 @@ const deleteTicket = async (ticket_price) => {
 
 module.exports = {
     getAllTicket,
-    getTicketByPrice,
     createTicket,
     updateTicket,
     deleteTicket

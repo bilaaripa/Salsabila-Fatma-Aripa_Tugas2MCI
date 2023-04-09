@@ -59,10 +59,10 @@ const getUserByName = async (req, res) => {
 const createUser = async (req, res) => {
     console.log(req.body)
     const data = {
-        nama : req.body.ktp,
-        nrp : req.body.name,
-        jurusan : req.body.phone_number,
-        umur : req.body.email
+        ktp : req.body.ktp,
+        name : req.body.name,
+        phone_number : req.body.phone_number,
+        email : req.body.email
     }
     userService.createUser(data)
     .then(user => {
@@ -116,7 +116,7 @@ const deleteUser = (req, res) => {
             data : {}
         });
     }
-    userService.deleteUser(nrp)
+    userService.deleteUser(ktp)
     .then(user => {
         res.status(200).send({
             status : 'success',

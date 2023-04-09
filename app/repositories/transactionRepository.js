@@ -8,11 +8,11 @@ const getAllTransaction = () => {
     )
 }
 
-const getTransactionByPaymentStatus = (payment_status) => {
+const getTransactionByPaymentStatus = (total_payment) => {
     return transaction.findOne(
         {
             where: {
-                payment_status: payment_status
+                total_payment: total_payment
             }
         }
     )
@@ -22,18 +22,18 @@ const createTransaction = (data) => {
     return transaction.create(data)
 }
 
-const updateTransaction = (data, payment_status) => {
+const updateTransaction = (data, total_payment) => {
     return transaction.update(data, {
         where: {
-            payment_status: payment_status
+            total_payment: total_payment
         }
     })
 }
 
-const deleteTransaction = (payment_status) => {
+const deleteTransaction = (total_payment) => {
     return transaction.destroy({
         where: {
-            payment_status: payment_status
+            payment_status: total_payment
         }
     })
 }

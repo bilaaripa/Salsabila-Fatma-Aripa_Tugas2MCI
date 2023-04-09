@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'seat_seat_id'
       }),
       this.belongsTo(models.transaction,{
-        foreignKey: 'ticket_id'
+        foreignKey: 'id'
       })
     }
   }
