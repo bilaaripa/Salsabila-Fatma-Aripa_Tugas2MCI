@@ -9,6 +9,7 @@ Tabel yang dibuat dalam penugasan kali ininadalah sebagai berikut:
 4. Tabel seat
 
 lalu muncul tabel tambahan yaitu:
+
 5. Tabel transaction_ticket
 
 #### CDM Database Seminar Schematics BST
